@@ -6,13 +6,15 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:15:45 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/11 11:16:52 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:32:26 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	ft_tolower(int c);
+
 int	ft_tolower(int c)
 {
-	if (c >= 65 || c <= 90)
+	if (c >= 65 && c <= 90)
 	{
 		c += 32;
 	}

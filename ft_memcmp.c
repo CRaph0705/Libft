@@ -6,11 +6,11 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:23:30 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/12 12:01:31 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:47:50 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
 

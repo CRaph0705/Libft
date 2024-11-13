@@ -6,9 +6,11 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:17:32 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/11 11:30:52 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:36:04 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {

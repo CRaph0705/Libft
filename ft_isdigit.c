@@ -6,9 +6,11 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:34:46 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/12 11:30:10 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:33:09 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int	ft_isdigit(int c);
 
 int	ft_isdigit(int c)
 {

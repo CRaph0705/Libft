@@ -6,9 +6,11 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:34:17 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/08 18:36:17 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:32:41 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int	ft_isalpha(int c);
 
 int	ft_isalpha(int c)
 {

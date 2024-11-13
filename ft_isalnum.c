@@ -6,9 +6,11 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:34:31 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/12 11:29:59 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:32:25 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int	ft_isalnum(int c);
 
 int	ft_isalnum(int c)
 {

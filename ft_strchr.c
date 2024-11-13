@@ -6,12 +6,13 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:52:59 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/11 12:53:55 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:34:39 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // The strchr() function returns a pointer to the first occurrence
 //  of the character c in the string s.
+char	*ft_strchr(const char *s, int c);
 
 char	*ft_strchr(const char *s, int c)
 {

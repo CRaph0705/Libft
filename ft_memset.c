@@ -6,11 +6,11 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:23:40 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/12 12:01:45 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:47:59 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n);
 

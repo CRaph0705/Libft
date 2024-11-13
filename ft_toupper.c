@@ -6,13 +6,15 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:56:29 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/12 11:30:27 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:32:32 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	ft_toupper(int c);
+
 int	ft_toupper(int c)
 {
-	if (c >= 97 || c <= 122)
+	if (c >= 97 && c <= 122)
 	{
 		c -= 32;
 	}

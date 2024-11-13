@@ -6,11 +6,13 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:23:33 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/11 18:22:39 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:47:53 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
+
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
