@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:25:53 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/13 16:31:56 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/14 16:37:50 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	sub = NULL;
-	if (!s || !start || len == 0)
+	if (!s || len == 0)
 		return (sub);
 	i = ft_strlen((char *)s);
 	if (start > i)
@@ -41,3 +41,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
+
+/* int	main(int ac, char **av)
+{
+	char	*sub;
+
+	(void)ac;
+	sub = ft_substr(av[1], (unsigned int)atoi(av[2]), (size_t)atoi(av[3]));
+	printf("substr de '%s' est '%s'", av[1], sub);
+	free(sub);
+	return (0);
+} */

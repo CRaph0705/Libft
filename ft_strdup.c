@@ -6,15 +6,15 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:18:55 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/13 16:19:51 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/14 11:35:11 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(const char *s);
+char	*ft_strdup(const char *s);
 
-char	*strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	int		s_len;
 	int		i;
