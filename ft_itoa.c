@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:33:26 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/15 15:21:59 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/15 15:53:53 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static size_t	get_size_to_malloc(int n)
 	return (size);
 }
 
-static static	size_t	get_nb_len(unsigned int nb)
+static	size_t	get_nb_len(unsigned int nb)
 {
 	size_t	nb_len;
 
