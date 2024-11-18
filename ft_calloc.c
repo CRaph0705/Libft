@@ -6,32 +6,33 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:18:45 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/13 15:47:37 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/18 19:16:21 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size);
+/* attention a la size max */
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*ptr;
+	unsigned char	*ptr;
 
-	ptr = NULL;
-	if ((nmemb / 2 * size) >= 1073741824 || nmemb == 0 || size == 0)
+	ptr = 0;
+	if (nmemb <= 0 || size <= 0)
 	{
-		return (NULL);
+		return (malloc(0));
 	}
-	ptr = malloc(nmemb * size + 1);
+	if ((nmemb * size) > 2147483647 || SIZE_MAX / size <= nmemb)
+	{
+		return (0);
+	}
+	ptr = malloc(sizeof(char) * nmemb * size);
 	if (!ptr)
-		return (NULL);
-	while (nmemb > 0)
-	{
-		ptr[nmemb] = '\0';
-		nmemb--;
-	}
-	return (ptr);
+		return (0);
+	ft_bzero(ptr, (size * nmemb));
+	return ((void *)ptr);
 }
 /*
 #include<stdio.h>
@@ -39,6 +40,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 int	main(void)
 {
 	void	*buf;
+
 	size_t	nelem;
 	size_t	s;
 	char	*dest;

@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:09:27 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/13 16:27:45 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/18 18:01:59 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,29 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
+	if (!little || *little == '\0')
+		return ((char *)big);
+	if (len < 1)
+		return (0);
 	if (ft_strlen((char *)little) > ft_strlen((char *)big) || *big == '\0')
 		return (NULL);
 	while (big[i] && i < len)
 	{
-		j = 0;
-		while (little[j] && little[j] == big[i + j] && (i + j) < len)
+		while (big[i + j] && little[j]
+			&& little[j] == big[i + j] && (i + j) < len)
 			j++;
 		if (little[j] == '\0')
 			return ((char *)&big[i]);
+		j = 0;
 		i++;
 	}
 	return (NULL);
 }
+
+/* int	main(int ac, char **av)
+{
+	(void)ac;
+	// printf("ft_strnstr : %s\n", ft_strnstr(av[1], av[2], (size_t)atoi(av[3])));
+	printf("strnstr : %s\n", strnstr(av[1], av[2], (size_t)atoi(av[3])));
+	return (0);
+} */

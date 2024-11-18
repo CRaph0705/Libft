@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 11:58:56 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/13 16:31:37 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/18 19:20:25 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		str_end--;
 		i--;
+		
 	}
 	str_len = (size_t)(str_end - str_start);
 	str = ft_substr(s1, str_start, str_len);

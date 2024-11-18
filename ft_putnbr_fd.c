@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:56:00 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/15 17:03:32 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/18 10:09:33 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd(nb % 10 + '0', fd);
 }
 
-int	main(int ac, char **av)
+/* int	main(int ac, char **av)
 {
 	if (ac < 2)
 		return (0);
 	ft_putnbr_fd(atoi(av[1]), atoi(av[2]));
 	return (0);
-}
+} */

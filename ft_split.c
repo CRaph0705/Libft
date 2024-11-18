@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:23:10 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/14 18:37:19 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/18 19:20:27 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static	size_t	get_word_count(const char *str, char separator)
 			str++;
 	}
 	return (word_count);
+	
 }
 
 static	size_t	get_word_length(const char *str, char separator)

@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:34:01 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/13 15:32:54 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/18 10:02:13 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_isascii(int c)
 	int	is_ascii;
 
 	is_ascii = 1;
-	if (!(c >= 0 && c <= 122))
+	if (!(c >= 0 && c <= 127))
 	{
 		is_ascii = 0;
 	}

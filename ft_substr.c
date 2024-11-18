@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:25:53 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/14 16:37:50 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/18 19:20:21 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	sub[i] = '\0';
+
 	return (sub);
+	
 }
 
 /* int	main(int ac, char **av)
