@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 11:08:18 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/18 19:20:23 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:02:54 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	str = NULL;
 	str_len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
-	if (ft_strlen((char *)s1) + ft_strlen((char *)s2) != 0)
-		str = malloc ((size_t)(str_len) * sizeof(char) + 1);
+	str = malloc ((size_t)(str_len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	while (s1[i])
@@ -41,7 +40,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	str[i + j] = '\0';
 	return (str);
-	
 }
 
 /* int	main(int ac, char **av)

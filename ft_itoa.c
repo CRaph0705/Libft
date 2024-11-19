@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:33:26 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/15 15:51:41 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/19 16:29:31 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,33 +86,34 @@ static char	*putnbr_dest(int n, char *str)
 	{
 		*str = '-';
 		nb = -n;
+		str++;
 		i++;
 	}
 	nb_pow = ft_check_nb_pow(nb);
 	while (nb_pow > 0)
 	{
-		str[i] = nb / nb_pow + '0';
+		*str = nb / nb_pow + '0';
 		nb = nb % nb_pow;
 		nb_pow = nb_pow / 10;
+		str++;
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	*str = '\0';
+	return (str - i);
 }
 
 char	*ft_itoa(int n)
 {
 	char			*str;
 
-	str = NULL;
 	str = malloc((get_size_to_malloc(n)) * sizeof(char));
 	if (!str)
 		return (NULL);
 	str = putnbr_dest(n, str);
 	return (str);
 }
-/* 
-int	main(int ac, char **av)
+
+/* int	main(int ac, char **av)
 {
 	if (ac < 2)
 	{
@@ -121,5 +122,4 @@ int	main(int ac, char **av)
 	}
 	printf("int %d -> string %s", atoi(av[1]), ft_itoa(atoi(av[1])));
 	return (0);
-}
- */
+} */

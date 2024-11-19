@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:23:10 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/18 19:20:27 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/19 10:56:28 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 char			**ft_split(char const *s, char c);
 static size_t	get_word_count(const char *str, char separator);
-static	size_t	get_word_length(const char *str, char separator);
+static size_t	get_word_length(const char *str, char separator);
+static void		*cascade_free(char **str, int i);
 
-static	size_t	get_word_count(const char *str, char separator)
+static size_t	get_word_count(const char *str, char separator)
 {
 	size_t	word_count;
 
@@ -33,10 +34,9 @@ static	size_t	get_word_count(const char *str, char separator)
 			str++;
 	}
 	return (word_count);
-	
 }
 
-static	size_t	get_word_length(const char *str, char separator)
+static size_t	get_word_length(const char *str, char separator)
 {
 	size_t	len;
 
@@ -47,6 +47,17 @@ static	size_t	get_word_length(const char *str, char separator)
 	return (len);
 }
 
+static void	*cascade_free(char **str, int i)
+{
+	while (i > 0)
+	{
+		free(str[i]);
+		i--;
+	}
+	free(str);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
@@ -55,27 +66,28 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	tab = malloc((1 + get_word_count(s, c)) * sizeof(char *));
-	if (!tab || !s || get_word_count(s, c) == 0)
-		return (0);
-	while (*s)
+	if (!tab)
+		return (NULL);
+	if (s && get_word_count(s, c) != 0)
 	{
-		while (*s && *s == c)
-			s++;
-		if (*s)
+		while (*s)
 		{
-			word_len = get_word_length(s, c);
-			tab[i] = ft_substr(s, 0, word_len);
-			if (tab[i] == NULL)
-				return (NULL);
-			i++;
-			s += word_len;
-			printf("line 71 : s ='%s'\n", s);
+			while (*s && *s == c)
+				s++;
+			if (*s)
+			{
+				word_len = get_word_length(s, c);
+				tab[i] = ft_substr(s, 0, word_len);
+				if (tab[i] == NULL)
+					return (cascade_free(tab, i));
+				i++;
+				s += word_len;
+			}
 		}
 	}
 	tab[i] = NULL;
 	return (tab);
 }
-
 /* int	main(int ac, char **av)
 {
 	char	**tab;
