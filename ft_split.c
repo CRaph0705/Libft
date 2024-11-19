@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:23:10 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/19 10:56:28 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:16:27 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ static void	*cascade_free(char **str, int i)
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
-	size_t	word_len;
 	int		i;
 
 	i = 0;
@@ -76,12 +75,11 @@ char	**ft_split(char const *s, char c)
 				s++;
 			if (*s)
 			{
-				word_len = get_word_length(s, c);
-				tab[i] = ft_substr(s, 0, word_len);
+				tab[i] = ft_substr(s, 0, get_word_length(s, c));
 				if (tab[i] == NULL)
 					return (cascade_free(tab, i));
 				i++;
-				s += word_len;
+				s += get_word_length(s, c);
 			}
 		}
 	}

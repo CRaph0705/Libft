@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:33:26 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/19 16:29:31 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:07:06 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_check_nb_pow(unsigned int nb)
 	{
 		nb = -nb;
 	}
-	while (nb > 10)
+	while (nb >= 10)
 	{
 		nb = nb / 10;
 		nb_pow = nb_pow * 10;
@@ -62,9 +62,9 @@ static	size_t	get_nb_len(unsigned int nb)
 {
 	size_t	nb_len;
 
+	if (nb == 0)
+		return (1);
 	nb_len = 0;
-	if (!(nb))
-		return (0);
 	while (nb > 0)
 	{
 		nb_len++;
@@ -84,29 +84,27 @@ static char	*putnbr_dest(int n, char *str)
 		nb = n;
 	else
 	{
-		*str = '-';
+		str[i] = '-';
 		nb = -n;
-		str++;
 		i++;
 	}
 	nb_pow = ft_check_nb_pow(nb);
 	while (nb_pow > 0)
 	{
-		*str = nb / nb_pow + '0';
+		str[i] = nb / nb_pow + '0';
 		nb = nb % nb_pow;
 		nb_pow = nb_pow / 10;
-		str++;
 		i++;
 	}
-	*str = '\0';
-	return (str - i);
+	str[i] = '\0';
+	return (str);
 }
 
 char	*ft_itoa(int n)
 {
 	char			*str;
 
-	str = malloc((get_size_to_malloc(n)) * sizeof(char));
+	str = ft_calloc((get_size_to_malloc(n)), sizeof(char));
 	if (!str)
 		return (NULL);
 	str = putnbr_dest(n, str);
@@ -117,7 +115,7 @@ char	*ft_itoa(int n)
 {
 	if (ac < 2)
 	{
-		printf("line 93 : error : un int est requis en arg");
+		printf("line 117 : error : un int est requis en arg");
 		return (0);
 	}
 	printf("int %d -> string %s", atoi(av[1]), ft_itoa(atoi(av[1])));
