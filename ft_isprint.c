@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:34:54 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/12 11:30:16 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/20 14:11:23 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@ int	ft_isprint(int c);
 
 int	ft_isprint(int c)
 {
-	int	i;
 	int	is_print;
 
 	is_print = 1;
-	i = 0;
 	if (!(c >= 32 && c <= 126))
 	{
 		is_print = 0;
