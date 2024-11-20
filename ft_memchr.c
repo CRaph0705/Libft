@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:23:25 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/13 15:47:45 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/20 17:40:17 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,20 @@
 
 void	*ft_memchr(const void *s, int c, size_t n);
 
-// scansn bytes of the memory area pointed to by s for the first instance of c
+/* scansn bytes of the memory area pointed to by s for the first instance of c
+the function has to seg fault if n == null */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (s && n)
+	while (n > 0)
 	{
-		while (n > 0)
-		{
-			if (*(char *)s++ == (unsigned char)c)
-				return ((void *)s - 1);
-			n--;
-		}
+		if (*(unsigned char *)s++ == (unsigned char)c)
+			return ((void *)s - 1);
+		n--;
 	}
 	return (NULL);
 }
 /*
-#include<stdio.h>
+#include <stdio.h>
 
 int	main (void)
 {

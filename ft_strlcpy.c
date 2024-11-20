@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:17:32 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/18 12:36:10 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/20 18:10:10 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (!(src))
-		return (0);
 	if (size != 0)
 	{
 		i = 0;

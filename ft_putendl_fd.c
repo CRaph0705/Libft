@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:56:22 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/15 16:59:05 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/20 20:22:10 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@ void	ft_putendl_fd(char *s, int fd);
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	len;
-
-	len = ft_strlen(s);
-	write(fd, s, len);
-	write(fd, "\n", 1);
+	if (!s)
+		return ;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
 /* 
 int	main(int ac, char **av)

@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:56:00 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/18 10:09:33 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/20 20:25:20 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		ft_putnbr_fd(nb / 10, fd);
 	}
-	ft_putchar_fd(nb % 10 + '0', fd);
+	ft_putchar_fd((nb % 10 + '0'), fd);
 }
 
 /* int	main(int ac, char **av)

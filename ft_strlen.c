@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:31:34 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/18 11:35:01 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/20 17:47:41 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	if (str)
-	{
-		while (str[i])
-			i++;
-	}
+	while (str[i])
+		i++;
 	return (i);
 }

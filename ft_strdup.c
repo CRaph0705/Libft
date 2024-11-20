@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:18:55 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/18 19:37:41 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/20 17:46:30 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ char	*ft_strdup(const char *s)
 	int		i;
 	char	*dest;
 
-	dest = 0;
 	i = 0;
-	s_len = ft_strlen(s);
-	dest = ft_calloc(s_len + 1, sizeof(char));
+	s_len = 0;
+	while (s[s_len])
+		s_len++;
+	dest = malloc(sizeof(char) * (s_len + 1));
 	if (!dest)
 		return (NULL);
 	while (s[i])
@@ -35,15 +36,15 @@ char	*ft_strdup(const char *s)
 	return (dest);
 }
 
-/*
-#include<stdio.h>
-int	main(int ac, char **av)
+/* int	main(int ac, char **av)
 {
 	char	*cpy;
-	if (ac < 2)
-		return (0);
-	cpy = ft_strdup(av[1]);
-	printf("la copie de %s est %s", av[1], cpy);
-	free(cpy);	
+	// if (ac < 2)
+	// 	return (0);
+	(void)ac;
+	(void)av;
+	cpy = ft_strdup(0);
+	printf("la copie de 0 est %s", cpy);
+	free(cpy);
 	return (0);
-}*/
+} */
