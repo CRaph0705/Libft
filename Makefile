@@ -6,11 +6,11 @@
 #    By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/08 17:15:49 by rcochran          #+#    #+#              #
-#    Updated: 2024/11/13 15:53:25 by rcochran         ###   ########.fr        #
+#    Updated: 2024/11/21 17:25:23 by rcochran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re bonus
 
 CC= cc
 CFLAGS= -Wall -Wextra -Werror
@@ -48,18 +48,27 @@ SRC :=	ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c
-OBJ := $(SRC:.c=.o)
+BSRC =	ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 NAME := libft.a
-CLEANABLE_FILES := *.o *.a
 HEADER := libft.h
+OBJ := $(SRC:.c=.o)
+BOBJ := $(BSRC:.c=.o)
 
 all : $(NAME)
 
 clean :
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BOBJ)
 
-fclean :
-	rm -f $(CLEANABLE_FILES)
+fclean : clean
+	rm -f $(NAME)
 
 re : fclean all
 
@@ -68,3 +77,6 @@ $(NAME): $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I$(HEADER) -o $@ -c $<
+
+bonus : $(BOBJ) $(OBJ) 
+	ar -rcs $(NAME) $?

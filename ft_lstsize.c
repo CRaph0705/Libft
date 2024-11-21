@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 16:39:50 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/21 10:35:50 by rcochran         ###   ########.fr       */
+/*   Created: 2024/11/21 12:14:11 by rcochran          #+#    #+#             */
+/*   Updated: 2024/11/21 16:27:22 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd);
+int	ft_lstsize(t_list *lst);
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	write(fd, &c, 1);
+	int	size;
+
+	size = 0;
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		size++;
+	}
+	return (size);
 }
-/* 
-int	main(int ac, char **av)
-{
-	(void) ac;
-	ft_putchar_fd(*av[1], atoi(av[2]));
-	return (0);
-}
- */

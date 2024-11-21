@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 16:39:50 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/21 10:35:50 by rcochran         ###   ########.fr       */
+/*   Created: 2024/11/21 12:12:00 by rcochran          #+#    #+#             */
+/*   Updated: 2024/11/21 16:25:59 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd);
+t_list	*ft_lstnew(void *content);
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	write(fd, &c, 1);
+	t_list	*new_node;
+
+	new_node = malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }
-/* 
-int	main(int ac, char **av)
-{
-	(void) ac;
-	ft_putchar_fd(*av[1], atoi(av[2]));
-	return (0);
-}
- */
