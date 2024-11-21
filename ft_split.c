@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:23:10 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/19 17:16:27 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/21 20:46:12 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static size_t	get_word_length(const char *str, char separator)
 
 static void	*cascade_free(char **str, int i)
 {
-	while (i > 0)
+	while (i >= 0)
 	{
 		free(str[i]);
 		i--;

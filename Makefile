@@ -6,7 +6,7 @@
 #    By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/08 17:15:49 by rcochran          #+#    #+#              #
-#    Updated: 2024/11/21 17:25:23 by rcochran         ###   ########.fr        #
+#    Updated: 2024/11/21 20:58:47 by rcochran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,15 +48,15 @@ SRC :=	ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c
-BSRC =	ft_lstnew.c \
-		ft_lstadd_front.c \
-		ft_lstsize.c \
-		ft_lstlast.c \
-		ft_lstadd_back.c \
-		ft_lstdelone.c \
-		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c
+BSRC =	ft_lstnew_bonus.c \
+		ft_lstadd_front_bonus.c \
+		ft_lstsize_bonus.c \
+		ft_lstlast_bonus.c \
+		ft_lstadd_back_bonus.c \
+		ft_lstdelone_bonus.c \
+		ft_lstclear_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstmap_bonus.c
 NAME := libft.a
 HEADER := libft.h
 OBJ := $(SRC:.c=.o)
@@ -78,5 +78,5 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -I$(HEADER) -o $@ -c $<
 
-bonus : $(BOBJ) $(OBJ) 
-	ar -rcs $(NAME) $?
+bonus : $(NAME) $(BOBJ)
+	ar -rcs $(NAME) $(BOBJ)
