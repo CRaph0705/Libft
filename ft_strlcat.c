@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:22:38 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/19 16:14:45 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:55:32 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@
 			The strlcat() function returns strlen(src) + MIN(siz,
 			strlen(initial dst)). If retval >= siz, truncation occurred.
  */
-// TODO:
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)

@@ -6,14 +6,14 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:25:53 by rcochran          #+#    #+#             */
-/*   Updated: 2024/11/19 17:12:04 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:57:08 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-/* diffecence entre return null ou return "", 
+/* difference entre return null ou return "", 
 ici on aurait pu renvoyer sub null sans lui avoir alloue de place */
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
