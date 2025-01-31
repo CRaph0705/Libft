@@ -6,77 +6,97 @@
 #    By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/08 17:15:49 by rcochran          #+#    #+#              #
-#    Updated: 2024/11/21 20:58:47 by rcochran         ###   ########.fr        #
+#    Updated: 2025/01/31 14:39:48 by rcochran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY : all clean fclean re bonus
+.PHONY : all clean fclean re
 
 CC= cc
 CFLAGS= -Wall -Wextra -Werror
-SRC :=	ft_atoi.c \
-		ft_bzero.c \
-		ft_calloc.c \
-		ft_isalnum.c \
-		ft_isalpha.c \
-		ft_isascii.c \
-		ft_isdigit.c \
-		ft_isprint.c \
-		ft_itoa.c \
-		ft_memchr.c \
-		ft_memcmp.c \
-		ft_memcpy.c \
-		ft_memmove.c \
-		ft_memset.c \
-		ft_putchar_fd.c \
-		ft_putendl_fd.c \
-		ft_putnbr_fd.c \
-		ft_putstr_fd.c \
-		ft_split.c \
-		ft_strchr.c \
-		ft_strdup.c \
-		ft_striteri.c \
-		ft_strjoin.c \
-		ft_strlcat.c \
-		ft_strlcpy.c \
-		ft_strlen.c \
-		ft_strmapi.c \
-		ft_strncmp.c \
-		ft_strnstr.c \
-		ft_strrchr.c \
-		ft_strtrim.c \
-		ft_substr.c \
-		ft_tolower.c \
-		ft_toupper.c
-BSRC =	ft_lstnew_bonus.c \
-		ft_lstadd_front_bonus.c \
-		ft_lstsize_bonus.c \
-		ft_lstlast_bonus.c \
-		ft_lstadd_back_bonus.c \
-		ft_lstdelone_bonus.c \
-		ft_lstclear_bonus.c \
-		ft_lstiter_bonus.c \
-		ft_lstmap_bonus.c
+SRC_DIR = src/
+SRC_FILES = $(addsuffix .c, $(FILES))
+SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
+FILES :=	ft_atoi \
+			ft_atoi_base \
+			ft_bzero \
+			ft_calloc \
+			ft_convert_base \
+			ft_isalnum \
+			ft_isalpha \
+			ft_isascii \
+			ft_isdigit \
+			ft_isprint \
+			ft_itoa \
+			ft_memchr \
+			ft_memcmp \
+			ft_memcpy \
+			ft_memmove \
+			ft_memset \
+			ft_putchar_fd \
+			ft_putendl_fd \
+			ft_putnbr_fd \
+			ft_putstr_fd \
+			ft_split \
+			ft_strchr \
+			ft_strdup \
+			ft_striteri \
+			ft_strjoin \
+			ft_strlcat \
+			ft_strlcpy \
+			ft_strlen \
+			ft_strmapi \
+			ft_strncmp \
+			ft_strnstr \
+			ft_strrchr \
+			ft_strtrim \
+			ft_substr \
+			ft_tolower \
+			ft_toupper \
+			get_next_line \
+			ft_lstnew_bonus \
+			ft_lstadd_front_bonus \
+			ft_lstsize_bonus \
+			ft_lstlast_bonus \
+			ft_lstadd_back_bonus \
+			ft_lstdelone_bonus \
+			ft_lstclear_bonus \
+			ft_lstiter_bonus \
+			ft_lstmap_bonus \
+			ft_print_hexa \
+			ft_print_num \
+			ft_print_ptr \
+			ft_printf_utils \
+			ft_printf
+
 NAME := libft.a
-HEADER := libft.h
-OBJ := $(SRC:.c=.o)
-BOBJ := $(BSRC:.c=.o)
+HEADER := includes/
+OBJ			=	$(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRC))
+OBJ_DIR = obj/
 
 all : $(NAME)
 
 clean :
-	rm -f $(OBJ) $(BOBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ_DIR) $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
-%.o: %.c
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	$(CC) $(CFLAGS) -I$(HEADER) -o $@ -c $<
 
-bonus : $(NAME) $(BOBJ)
-	ar -rcs $(NAME) $(BOBJ)
+
+$(OBJ_DIR) :
+	mkdir -p $(OBJ_DIR)
+
+#unit : all
+#make my own libft tester
+
+main : all
+	$(CC) main.c -c -I$(HEADER) -o obj/main.o
+	$(CC) obj/main.o -L. -l:libft.a -o obj/a.out

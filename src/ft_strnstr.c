@@ -43,7 +43,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 /* int	main(int ac, char **av)
 {
 	(void)ac;
-	// printf("ft_strnstr : %s\n", ft_strnstr(av[1], av[2], (size_t)atoi(av[3])));
+	printf("ft_strnstr : %s\n", ft_strnstr(av[1], av[2], (size_t)atoi(av[3])));
 	printf("strnstr : %s\n", strnstr(av[1], av[2], (size_t)atoi(av[3])));
 	return (0);
 } */

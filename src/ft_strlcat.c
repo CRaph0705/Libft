@@ -6,11 +6,12 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:22:38 by rcochran          #+#    #+#             */
-/*   Updated: 2024/12/11 10:55:32 by rcochran         ###   ########.fr       */
+/*   Updated: 2024/11/22 14:44:16 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
+
 // size_t			strlcat(char *dst, const char *src, size_t siz);
 /* size_t strlcat (char * dst, const char * src, size_t siz)
 		Concatenate two strings. Appends src to string dst of size siz (unlike
